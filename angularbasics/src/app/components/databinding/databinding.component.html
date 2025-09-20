@@ -1,0 +1,31 @@
+<div class="container">
+    <ol>
+        <li>One way data Binding</li>
+        <ul>
+            <li>Interpolation </li>
+            <div>
+                <p>My name is {{name}}</p>
+                <p>My age is {{age}}</p>
+            </div>
+            <li>Event Binding</li>
+            <div>
+                <button class="btn btn-primary" (click)="showAlert()">Click</button>
+            </div>
+            <li>Property Binding</li>
+            <div>
+                <input type="text" [value]="name" [placeholder]="placeholder">
+                <button class="btn btn-primary mx-2" (click)="changePlaceHolder('Enter name here')">Enter name here</button>
+                <button class="btn btn-primary mx-2" (click)="changePlaceHolder('&&&&&&&&&&')">&&&&&&&&&&</button>
+            </div>
+            <li>Style Binding</li>
+            <h4 [style.color]="color">Hello</h4>
+            <button class="btn btn-success mx-2"(click)="changeColor('green')"> Green</button>
+            <button class="btn btn-warning mx-2"(click)="changeColor('yellow')"> yellow</button>
+            <button class="btn btn-danger mx-2" (click)="changeColor('red')"> red</button>
+
+
+
+        </ul>
+        <li>Two way data binding</li>
+    </ol>
+</div>
