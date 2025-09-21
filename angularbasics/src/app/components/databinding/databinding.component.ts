@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-databinding',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './databinding.component.html',
   styleUrl: './databinding.component.css',
 })
@@ -11,6 +12,7 @@ export class DatabindingComponent {
   age = 19;
   placeholder='***********'
   color='red'
+  username=''
 
   showAlert() {
     alert('Button Clicked');
