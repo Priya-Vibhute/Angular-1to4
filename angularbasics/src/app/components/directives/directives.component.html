@@ -1,0 +1,70 @@
+<h1>Attribute Directives</h1>
+<p>ngStyle  ,ngClass ,ngModel</p>
+<hr>
+
+<p [ngClass]="['m-3','p-3','bg-warning','text-center']">Lorem ipsum dolor sit amet.</p>
+<p [ngClass]="{'bg-success':false,'bg-danger':true}">Lorem ipsum dolor sit amet.</p>
+<hr>
+
+<div class="card  m-3" style="max-width: 18rem;" 
+    [ngClass]="{'text-light':darkTheme,'bg-dark':darkTheme ,'text-dark':!darkTheme,'bg-light':!darkTheme}"
+>
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Dark card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+
+<button class="btn btn-primary" (click)="toggleTheme()"> Change Theme</button>
+
+<hr>
+
+
+<p [ngStyle]="styles()">Lorem ipsum dolor sit amet consectetur.</p>
+<button class="btn btn-primary mx-2" (click)="changeSize('50px')"> 50px</button>
+<button class="btn btn-primary mx-2" (click)="changeSize('70px')"> 70px</button>
+<button class="btn btn-primary mx-2" (click)="changeSize('90px')"> 90px</button>
+
+
+<hr>
+
+<h1>Structural Directives</h1>
+<p>ngIf , ngFor</p>
+
+<hr>
+
+<p *ngIf="status">  If block ..... </p>
+
+<hr>
+
+<ng-container *ngIf="loggedIn;then block1 else block2"></ng-container>
+<ng-template #block1>
+    <p class="bg-warning m-2 p-3">You are logged In</p>
+
+</ng-template>
+<ng-template #block2>
+    <p class="bg-warning m-2 p-3">You are logged out</p>
+</ng-template>
+
+<button class="btn btn-primary mx-2" (click)="toggleLogin()">Click</button>
+
+<hr>
+
+<ul class="list-group">
+ 
+    <li class="list-group-item" *ngFor="let x of colors">{{x}}</li>
+  
+</ul>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4" *ngFor="let t of todos">
+
+            <div class="bg-warning p-3 text-center mt-3">
+                <p>{{t.todo}} <span class="badge bg-dark" *ngIf="t.completed"> completed </span></p>
+            </div>
+
+        </div>
+    </div>
+</div>
