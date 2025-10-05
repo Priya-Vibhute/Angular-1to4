@@ -5,11 +5,13 @@ import { InputAndOutputComponent } from './input-and-output/input-and-output.com
 import { Dirent } from 'fs';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { PipeExamplesComponent } from './components/pipe-examples/pipe-examples.component';
+import { ServiceComponent } from './components/service/service.component';
 
 export const routes: Routes = [
    {path:"",component:HomeComponent},
    {path:"data-binding",component:DatabindingComponent},
    {path:"input-output",component:InputAndOutputComponent},
    {path:"directives",component:DirectivesComponent},
-   {path:'pipes',component:PipeExamplesComponent}
+   {path:'pipes',component:PipeExamplesComponent},
+   {path:'services',component:ServiceComponent}
 ];

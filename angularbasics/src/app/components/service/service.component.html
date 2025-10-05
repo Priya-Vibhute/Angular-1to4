@@ -1,0 +1,9 @@
+<p>service works!</p>
+<div>
+    <p *ngFor="let p of products" class="bg-warning m-3 p-2 text-center"> {{p.id}}  {{p.name}}</p>
+</div>
+
+<button class="btn btn-primary mx-2" (click)="getProductById(101)">101</button>
+<button class="btn btn-primary mx-2" (click)="getProductById(102)">102</button>
+<button class="btn btn-primary mx-2"  (click)="getProductById(103)">103</button>
+<button class="btn btn-primary mx-2">All Products</button>
