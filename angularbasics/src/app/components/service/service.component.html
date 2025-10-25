@@ -7,3 +7,11 @@
 <button class="btn btn-primary mx-2" (click)="getProductById(102)">102</button>
 <button class="btn btn-primary mx-2"  (click)="getProductById(103)">103</button>
 <button class="btn btn-primary mx-2">All Products</button>
+
+<hr>
+
+<div>
+    <p class="bg-warning m-3 p-3" *ngFor="let c of categories"> {{c.name}}</p>
+</div>
+
+<button class="btn btn-primary" (click)="getCategories()">Fetch Categories</button>

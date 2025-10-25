@@ -1,0 +1,25 @@
+<p>p works!</p>
+
+<button class="btn btn-primary" (click)="changeShowChild()">Show/Hide Child</button>
+<hr>
+<app-q [data]="parentData" *ngIf="showChild">
+    <h1>Content From parent</h1>
+</app-q>
+
+
+
+<hr>
+
+<button class="btn btn-primary mx-2" 
+(click)="changeParentData('A')"
+>A</button>
+
+
+<button class="btn btn-primary mx-2" 
+(click)="changeParentData('B')"
+>B</button>
+
+
+<button class="btn btn-primary mx-2" 
+(click)="changeParentData('C')"
+>C</button>
