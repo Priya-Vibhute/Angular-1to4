@@ -1,0 +1,71 @@
+<h1 class="p-3 m-3 text-center">Reactive Form</h1>
+<hr>
+<div class="p-3 m-3">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" formControlName="name">
+    <div *ngIf="form.get('name')?.invalid && (form.get('name')?.touched ||form.get('name')?.dirty)">
+
+    <div id="emailHelp" class="form-text text-danger" *ngIf="form.get('name')?.errors?.['required']">
+        Name is required
+    </div>
+
+    <div id="emailHelp" class="form-text text-danger" *ngIf="form.get('name')?.errors?.['minlength']">
+        Name is too small
+    </div>
+
+       <div id="emailHelp" class="form-text text-danger" *ngIf="form.get('name')?.errors?.['maxlength']">
+        Name is too big
+    </div>
+
+    </div>
+
+    
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    formControlName="email">
+    <div *ngIf="form.get('email')?.invalid && (form.get('email')?.touched ||form.get('email')?.dirty)">
+
+    <div id="emailHelp" class="form-text text-danger" *ngIf="form.get('email')?.errors?.['required']">
+        Email is required
+    </div>
+
+    <div id="emailHelp" class="form-text text-danger" *ngIf="form.get('email')?.errors?.['email']">
+       Enter valid email address
+    </div>
+
+      
+
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Age</label>
+    <input type="number" class="form-control" id="exampleInputPassword1" formControlName="age">
+        <div *ngIf="form.get('age')?.invalid && (form.get('age')?.touched ||form.get('age')?.dirty)">
+
+    <div id="emailHelp" class="form-text text-danger" *ngIf="form.get('age')?.errors?.['required']">
+        Age is required
+    </div>
+
+    <div id="emailHelp" class="form-text text-danger" *ngIf="form.get('age')?.errors?.['min']">
+      Min age is 1
+    </div>
+
+       <div id="emailHelp" class="form-text text-danger" *ngIf="form.get('age')?.errors?.['max']">
+        max age is 60
+    </div>
+
+    </div>
+
+
+    
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
