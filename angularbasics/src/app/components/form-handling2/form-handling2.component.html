@@ -65,6 +65,22 @@
 
     
   </div>
+
+
+  <div class="mb-3">
+    <label for="">Enter password</label>
+    <input type="password" formControlName="password">
+ <div *ngIf="form.get('password')?.invalid && (form.get('password')?.touched ||form.get('password')?.dirty)">
+
+     <div id="emailHelp" class="form-text text-danger" *ngIf="form.get('password')?.errors?.['required']">
+      Password is required
+    </div>
+
+     <div id="emailHelp" class="form-text text-danger" *ngIf="form.get('password')?.errors?.['commonPassword']">
+     commonly used password
+    </div>
+</div>
+  </div>
  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

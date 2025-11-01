@@ -1,2 +1,15 @@
 <app-navbar></app-navbar>
+<hr />
+<div class="row">
+  <div class="col-4">
+    <h1>{{ isLoggedIn() ? "You are loggeIn" : "You are logged out" }}</h1>
+  </div>
+  <div class="col">
+    <button class="btn btn-primary m-3" (click)="toggleLogin()">
+      {{ isLoggedIn() ? "logout" : "login" }}
+    </button>
+  </div>
+</div>
+
+<hr />
 <router-outlet></router-outlet>

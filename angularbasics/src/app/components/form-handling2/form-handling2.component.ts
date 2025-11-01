@@ -1,6 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
+
+
+export function commonPassword(controls:AbstractControl):ValidationErrors|null
+{
+   let commonPasswords=["1234","12345678","abcd","abc","abcde","password"];
+   if(commonPasswords.includes(controls.value))
+   {
+      return {commonPassword:true}
+   }
+   else
+   {
+       return null;
+   }
+}
+
 
 @Component({
   selector: 'app-form-handling2',
@@ -17,7 +32,8 @@ export class FormHandling2Component {
    this.form= this.formBuilder.group({
       name:['',[Validators.required,Validators.minLength(2),Validators.maxLength(15)]],
       email:['',[Validators.email,Validators.required]],
-      age:[undefined,[Validators.min(1),Validators.max(60),Validators.required]]
+      age:[undefined,[Validators.min(1),Validators.max(60),Validators.required]],
+      password:[undefined,[Validators.required,commonPassword]]
     })
   }
 

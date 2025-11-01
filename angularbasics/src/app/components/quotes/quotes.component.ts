@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Quotes, QuoteService } from '../../services/quote.service';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-quotes',
@@ -11,7 +12,9 @@ import { CommonModule } from '@angular/common';
 export class QuotesComponent {
 
   quotes!:Quotes;
-  constructor(private quoteService:QuoteService)
+  queryParams!:any;
+  constructor(private quoteService:QuoteService
+    ,private activateRoute:ActivatedRoute)
   {
 
   }
@@ -24,6 +27,14 @@ export class QuotesComponent {
         this.quotes=data;
       }
     })
+
+    this.activateRoute.queryParams
+    .subscribe(
+      {
+        next:(params)=>this.queryParams=params
+        
+      }
+    )
   }
 
 }
